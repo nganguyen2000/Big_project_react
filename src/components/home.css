@@ -1,0 +1,46 @@
+
+.container{
+    margin: 50px;
+    
+}
+.sp{
+    
+    margin-top: 20px;
+    margin-left: 100px;
+    display:inline-grid;
+    grid-template-columns: auto auto auto auto;
+  
+}
+.contain_pr{
+    display: flex;
+}
+.price{
+    margin-left: 15px;
+    margin-right: 50px;
+    color: red;
+    font-size: 17px;
+}
+.oldPrice{
+    color: gray;
+    text-decoration: line-through;
+}
+.btn-detail{
+    margin-left: 40px;
+    margin-right: 30px;
+    color: green;
+    height: 25px;
+    font-size: 15px;
+}
+.btn-add{
+    color: darkslateblue;
+    height: 25px;
+    font-size: 15px;
+}
+.item{
+    background-color: #7fcec569;
+    margin-left:30px;
+    margin-top: 40px;
+}
+.content{
+    margin: 15px;
+}
