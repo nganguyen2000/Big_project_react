@@ -1,0 +1,74 @@
+
+.contentCart{
+    height: 500px;
+    margin-top: 100px;
+}
+.footerCart{
+    background-color: indianred;
+    height: 300px;
+}
+
+.projTitle1 {
+    font-weight: bold; /*chu in dam*/
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 3px;
+    text-transform: uppercase; /* chuyen tat ca thanh chu in hoa*/
+    margin-top: 30px;
+  }
+.projTitle2 {
+   font-weight: bold; /*chu in dam*/
+   text-align: center;
+   font-size: 2em;
+   letter-spacing: 3px;
+   text-transform: uppercase; /* chuyen tat ca thanh chu in hoa*/
+   margin-top: 10px;
+   padding-bottom:  1em ;
+   border-bottom: 1px solid #dadada;
+ }
+ span {
+    font-weight: normal; /*chu binh thuong*/
+    font-style: italic;
+    text-transform: lowercase;/*chu thuong*/
+    color: #777;
+    
+  }
+.headingt{
+    height: 70px;
+    border-bottom: 1px solid #dadada;
+}
+
+.mycart{
+    font-family: "Droid Serif","serif";
+    font-size: 2em;
+    float: left;
+    font-weight: normal;
+    margin-top: 3px;
+    margin-left: 150px;
+   }
+  
+   .continue {
+     margin-right: 100px;
+      text-decoration: none;
+      letter-spacing: -.015em;
+      font-size: .75em;
+      padding: 1em;
+      color: #fff;
+      background: #82ca9c;
+      font-weight: bold;
+      border-radius: 50px;
+      float: right;
+      text-align: right;
+       
+    }
+    .continue:after {
+        content: "\276f";
+        padding: .5em;
+        position: relative;
+        right:0;
+        
+      }
+      .continue:hover {
+        background: #f69679;
+      }
+   

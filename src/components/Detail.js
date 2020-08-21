@@ -10,7 +10,8 @@ class Detail extends Component{
             products: []
         }
         let id = this.props.match.params.id;
-        this.getDeatail(id);
+      // console.log(id);
+      this.getDeatail(id);
     }
     getDeatail(id){
         fetch("http://127.0.0.1:8000/api/home/detail/" + id)
@@ -34,7 +35,7 @@ class Detail extends Component{
                     {this.state.products.map(item=>
                     <div className="content1">
                         <div className="ct_detail1">
-                        <img src={item.image} alt="" width="350px" height="350px"/>
+                        <img src={"http://127.0.0.1:8000"+item.image} alt="" width="350px" height="350px"/>
                         </div>
                         
                         <div className="ct_detail2">

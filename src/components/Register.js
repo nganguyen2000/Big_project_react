@@ -28,7 +28,7 @@ class Register extends Component {
         console.log(userInJson);
 
         fetch(" http://127.0.0.1:8000/api/register", {
-            method: "post",
+            method: "POST",
             headers: {
                 "Content-Type":"application/json"
             },

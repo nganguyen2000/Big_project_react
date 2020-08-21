@@ -3,7 +3,8 @@ import './products.css';
 import HeaderAdmin from './HeaderAdmin';
 import Footer from './Footer';
 import {
-    withRouter
+    withRouter,
+    Link
 } from "react-router-dom";
 class Products extends Component {
     constructor(props) {
@@ -11,11 +12,12 @@ class Products extends Component {
         this.state = {
             productsOfUser: []
         }
+       
         let token = localStorage.getItem("token");
         console.log(token);
         this.getDataProducts(token);
-        // let id=this.props.item;
-        // this.onDelete(id);
+        let id=this.props.item;
+        this.DeleteProduct(id);
     }
 
     getDataProducts(token) {
@@ -36,20 +38,25 @@ class Products extends Component {
             productsOfUser: data,
         });
     }
+    DeleteProduct(id){
+        return(event)=>{
+        fetch("http://127.0.0.1:8000/api/delete/product/"+id,{
+            method:"DELETE",
+            headers:{
+                "content-Type":"application/json"
+            },
+        }).then(response=>{
+            console.log(response);
+            alert("already delete products");
+        }).then((response) => {
+            this.refresh();
+        });}
 
-
-    // getDataProducts(user_id){
-    //     fetch("http://127.0.0.1:8000/api/show/products",{
-    //         headers: {
-    //             "Content-Type":"application/json",
-    //             "Authorization":user_id
-    //         },
-    //     }).then(response => {
-    //             response.json().then((data) => {
-    //                     this.setState({productsOfUser:data});
-    //             });
-    //     });
-    // }
+    }
+    refresh = () => {
+        window.location.reload();
+    }
+   
 
     render() {
         return (
@@ -71,16 +78,14 @@ class Products extends Component {
                             <tr>
                                 <td>{product.id}</td>
                                 <td>{product.name}</td>
-                                <td>{product.image}</td>
+                                <td> <img src={"http://127.0.0.1:8000"+product.image} alt="" width="150px" height="150px"/></td>
                                 <td>{product.price}</td>
                                 <td>{product.oldPrice}</td>
                                 <td>{product.quantity}</td>
-                                <td><button>Delete</button></td>
-                                <td><button>Edit</button></td>
+                                <td><button className="bt_delete" type="submit" onClick={this.DeleteProduct(product.id)}>Delete</button></td>
+                                <Link to={"/edit/" + product.id}><button className="bt_update" type="">Update</button></Link>
                             </tr>
                         )}
-
-
                     </table>
                 </div>
                 <Footer />

@@ -15,19 +15,14 @@ import UserHome from './components/UserHome';
 import Detail from './components/Detail';
 import AddProduct from './components/AddProduct';
 import Products from './components/Products';
+import Edit from './components/Edit';
+import Addtocart from './components/Addtocart';
+import Cart from './components/Cart';
+
 class App extends React.Component{
   render(){
     return (
       <Router>
-
-        {/* <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/posts">Posts</Link></li>
-            <li><Link to="/post">Post</Link></li>
-            <li><Link to="/addpost">Add post</Link></li>
-
-        </ul> */}
         <switch>
           <Route path="/" exact>
               <Home/>
@@ -47,11 +42,20 @@ class App extends React.Component{
           <Route  path={"/detail/:id"}>
             <Detail/>
         </Route>
+        <Route  path={"/addtocart/:id"}>
+            <Addtocart/>
+        </Route>
         <Route path="/addProduct" exact>
             <AddProduct/>
         </Route>
         <Route path="/manageProducts" exact>
             <Products/>
+        </Route>
+        <Route path={"/edit/:id"} exact>
+            <Edit/>
+        </Route>
+        <Route path="/cart" exact>
+            <Cart/>
         </Route>
         </switch>
         

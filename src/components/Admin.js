@@ -36,7 +36,7 @@ class Admin extends Component{
                     {this.state.products.map((item) => (
                     <div className="item">
                         <div className="content">
-                            <img src={item.image} alt="" width="250px" height="250px"/>
+                        <img src={"http://127.0.0.1:8000/"+item.image} alt="" width="250px" height="250px"/>
                             <h3>{item.name}</h3>
                             <div className="contain_pr">
                                 <p className="price">{item.price} VNĐ</p>
